@@ -13,12 +13,15 @@ import android.widget.Toast;
 
 import com.example.josh.betterscribe.Army;
 
+import java.util.List;
+
 import static android.support.v7.appcompat.R.styleable.View;
 
 public class MainActivity extends AppCompatActivity {
 
     //ini
     ListView armyList;
+    List<Army> armies;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

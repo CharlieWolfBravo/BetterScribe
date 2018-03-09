@@ -38,7 +38,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="HQ"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/hq_add_button"
@@ -77,7 +79,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Elite"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/elite_add_button"
@@ -107,7 +111,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Troop"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/troop_add_button"
@@ -137,7 +143,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Fast Attack"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/fast_attack_add_button"
@@ -167,7 +175,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Heavy Support"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/heavy_support_add_button"
@@ -197,7 +207,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Flyer"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/flyer_add_button"
@@ -227,7 +239,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Transport"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/transport_add_button"

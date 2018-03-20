@@ -1,5 +1,6 @@
 package com.example.josh.betterscribe;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -118,8 +119,8 @@ public class ArmyView extends AppCompatActivity {
     public void onBackPressed(){
         Intent i = new Intent(getBaseContext(),MainActivity.class);
         i.putExtra("Army",currentArmy);
-        setResult(123);//experimenting with startactivityforresult()
-        startActivity(i);
+        setResult(Activity.RESULT_OK, i);
+        super.onBackPressed();
     }
     public void addHQLine(Unit U){
         final Unit unitCopy = U;
@@ -144,7 +145,7 @@ public class ArmyView extends AppCompatActivity {
         tv.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
                 //start new intent and pass the unit in the intent
-                Intent intent = new Intent(getBaseContext(),StatView.class);
+                Intent intent = new Intent(ArmyView.this,StatView.class);
                 intent.putExtra("Unit",unitCopy);
                 startActivity(intent);
             }

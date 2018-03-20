@@ -1,5 +1,6 @@
 package com.example.josh.betterscribe;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -68,11 +69,11 @@ public class MainActivity extends AppCompatActivity {
                                 String pointLimit = armyPoints.getText().toString();
                                 int points = Integer.parseInt(pointLimit);
                                 Army newArmy = new Army(userText,points);
-                                armyList.add(newArmy);
-                                finish();
-                                Intent i = new Intent(getBaseContext(),ArmyView.class);
+                                //armyList.add(newArmy);
+                                //finish();
+                                Intent i = new Intent(MainActivity.this,ArmyView.class);
                                 i.putExtra("Army",newArmy);
-                                startActivity(i);
+                                startActivityForResult(i,123);
                             }
                         });
                 builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
@@ -98,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, android.view.View view, int position, long id){
                 Intent intent = new Intent(getBaseContext(),ArmyView.class);
                 Army passedArmy = armyList.get(position);
+                armyList.remove(position);
                 intent.putExtra("Army",passedArmy);
                 startActivityForResult(intent,123);
             }
@@ -109,14 +111,26 @@ public class MainActivity extends AppCompatActivity {
     //TO DO
     //Need to be able to get army being passed back from army view onBackpress
     @Override
-    public void onRestart(){//in the life cycle this is where we want to load intents
-        super.onRestart();
+    public void onActivityResult(int requestCode, int resultCode, Intent data){//in the life cycle this is where we want to load intents
+        Log.d("Dev", "In on activity result...");
         //check if there is an intent for us, if so add the army into our armylist
-        Intent i = getIntent();
-        if(i != null) {
-            Army tempArmy = i.getParcelableExtra("Army");
-            armyList.add(tempArmy);
+        if(requestCode==123) {
+            Log.d("Dev", "Request code 123...");
+            if (resultCode == Activity.RESULT_OK) {
+                Log.d("Dev", "Activity result Okay...");
+                if (data != null) {
+                    Log.d("Dev", "Intent was not null...");
+                    Army tempArmy = data.getParcelableExtra("Army");
+                    armyList.add(tempArmy);
+                } else {
+                    Log.d("Dev", "Intent was empty...");
+                }
+
+            } else {
+                Log.d("Dev", "Activity result NOT Okay..."+resultCode);
+            }
         }
+        super.onActivityResult(requestCode,resultCode,data);
     }
 
 }

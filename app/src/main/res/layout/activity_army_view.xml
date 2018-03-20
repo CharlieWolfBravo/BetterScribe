@@ -17,7 +17,8 @@
             android:id="@+id/unit_type_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="20dp">
 
             <LinearLayout
                 android:id="@+id/hq_vert_layout"
@@ -48,15 +49,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="+" />
-                </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText14"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name" />
+                </LinearLayout>
 
             </LinearLayout>
 

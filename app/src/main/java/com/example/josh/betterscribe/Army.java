@@ -1,17 +1,60 @@
 package com.example.josh.betterscribe;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.Log;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
+import com.example.josh.betterscribe.Unit;
 
 /**
  * Created by Josh on 2018-03-09.
  */
 
-public class Army {
+//make this parcelable so that we can pass it between intents
+public class Army implements Parcelable {
     public String name;
-    private int maxPoints;
-    private int points;
-    public List<Unit> composition;
+    public int maxPoints;
+    public int points;
+    public List<Unit> composition = new ArrayList<>();
+
+    /////////////////////////////////////////////////////////////////////
+    //needed if we want to use parcels
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+    //this allows us to make parcels out of this object
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeInt(maxPoints);
+        dest.writeInt(points);
+        dest.writeTypedList(composition);
+    }
+
+    //retrieving data from the parcel
+    private Army(Parcel in){
+        this.name=in.readString();
+        this.maxPoints=in.readInt();
+        this.points=in.readInt();
+        in.readTypedList(composition, Unit.CREATOR);
+    }
+
+    public static final Parcelable.Creator<Army> CREATOR = new Parcelable.Creator<Army>() {
+        @Override
+        public Army createFromParcel(Parcel source) {
+            return new Army(source);
+        }
+
+        @Override
+        public Army[] newArray(int size) {
+            return new Army[size];
+        }
+    };
+
+    /////////////////////////////////////////////////////////////////////
 
     public Army() {
         super();
@@ -21,6 +64,7 @@ public class Army {
     public Army(String n, int p){
         name = n;
         points = p;
+        composition = new ArrayList<>();
     }
 
     @Override
@@ -43,7 +87,10 @@ public class Army {
     }
 
     public void addUnit(Unit u){
-        composition.add(u);
+        if(u != null){
+            this.composition.add(u);
+        }
+        else Log.d("Dev tag", "FUUUUUCK");
     }
 
     //returns a list of units that are only HQs in the composition

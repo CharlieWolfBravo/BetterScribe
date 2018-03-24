@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ArmyView" />
+        <activity android:name=".ArmyView"
+            android:launchMode="singleTask" >
+        </activity>
         <activity android:name=".StatView"></activity>
     </application>
 

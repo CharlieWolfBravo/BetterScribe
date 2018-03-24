@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                                 //finish();
                                 Intent i = new Intent(MainActivity.this,ArmyView.class);
                                 i.putExtra("Army",newArmy);
+                                dialog.cancel();
                                 startActivityForResult(i,123);
                             }
                         });
@@ -80,24 +81,35 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //do nothing
+                        dialog.cancel();
                     }
                 });
 
                 AlertDialog dialog = builder.create();
                 dialog.show();
+                //dialog.dismiss();
             }
         });
 
-
+        //Army neww = new Army("Hello",1000);
+        //armyList.add(neww);
         ArrayAdapter<Army> adapter = new ArrayAdapter<Army>(this,android.R.layout.simple_list_item_1, armyList);
 
         armyListView.setAdapter(adapter);
+
+        String armies = new String();
+        for(Army a: armyList){
+            armies += a.name;
+        }
+        Toast t = Toast.makeText(MainActivity.this,"Starting oncreate()"+armies,Toast.LENGTH_LONG);
+        t.show();
+
 
         armyListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             //what happens when we click an item
             @Override
             public void onItemClick(AdapterView<?> parent, android.view.View view, int position, long id){
-                Intent intent = new Intent(getBaseContext(),ArmyView.class);
+                Intent intent = new Intent(MainActivity.this,ArmyView.class);
                 Army passedArmy = armyList.get(position);
                 armyList.remove(position);
                 intent.putExtra("Army",passedArmy);
@@ -113,6 +125,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){//in the life cycle this is where we want to load intents
         Log.d("Dev", "In on activity result...");
+        super.onActivityResult(requestCode,resultCode,data);
+        resultCode = RESULT_OK;
         //check if there is an intent for us, if so add the army into our armylist
         if(requestCode==123) {
             Log.d("Dev", "Request code 123...");
@@ -122,6 +136,8 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("Dev", "Intent was not null...");
                     Army tempArmy = data.getParcelableExtra("Army");
                     armyList.add(tempArmy);
+                    String thing = data.getStringExtra("HAHA");
+                    Log.d("Dev", tempArmy.name);
                 } else {
                     Log.d("Dev", "Intent was empty...");
                 }
@@ -130,7 +146,22 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Dev", "Activity result NOT Okay..."+resultCode);
             }
         }
-        super.onActivityResult(requestCode,resultCode,data);
+        startActivity(getIntent());
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        ArrayAdapter<Army> adapter = new ArrayAdapter<Army>(this,android.R.layout.simple_list_item_1, armyList);
+
+        armyListView.setAdapter(adapter);
+
+        String armies = new String();
+        for(Army a: armyList){
+            armies += a.name;
+        }
+        Toast t = Toast.makeText(MainActivity.this,armies,Toast.LENGTH_LONG);
+        t.show();
     }
 
 }

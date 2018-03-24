@@ -63,13 +63,14 @@ public class Army implements Parcelable {
 
     public Army(String n, int p){
         name = n;
-        points = p;
+        maxPoints = p;
         composition = new ArrayList<>();
+        points = 0;
     }
 
     @Override
     public String toString(){
-        return this.name+' '+this.points;
+        return this.name+"    "+this.points+'/'+this.maxPoints;
     };
 
     public String getArmyname() { return this.name;};

@@ -29,14 +29,19 @@ public class ArmyView extends AppCompatActivity {
     Army currentArmy = new Army();
     int currentID =  0;
     ArrayList<Unit> masterList = new ArrayList<>();
+    TextView info;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_army_view);
+
+
         //create master list
         createMasterList();
         Intent intent = getIntent();
         Army tempArmy = (Army) intent.getParcelableExtra("Army");
+        info = (TextView) findViewById(R.id.infoView);
+        info.setText(tempArmy.name+"   "+tempArmy.points+"/"+tempArmy.maxPoints);
         if(tempArmy != null){
             currentArmy.name = tempArmy.name;
             currentArmy.maxPoints = tempArmy.maxPoints;
@@ -64,25 +69,15 @@ public class ArmyView extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         Intent returnIntent = new Intent();
+        currentArmy.isDrawn = false;
         returnIntent.putExtra("Army",currentArmy);
-        returnIntent.putExtra("HAHA","FUCK YOU");
         setResult(RESULT_OK, returnIntent);
         Log.d("Dev", "Result being sent back: "+RESULT_OK);
         String list = new String();
         for(Unit u: currentArmy.composition){
             list += u.name;
         }
-        if(returnIntent.getParcelableExtra("Army") == null){
-            Log.d("Dev","FUCK");
-        }else{
-            Army fag = returnIntent.getParcelableExtra("Army");
 
-            Log.d("Dev",fag.name+" "+fag.points);
-        }
-
-        Toast t = Toast.makeText(ArmyView.this,list,Toast.LENGTH_LONG);
-        //t.show();
-        //super.onBackPressed();
         finish();
     }
     public void addUnitLine(Unit U){
@@ -154,6 +149,7 @@ public class ArmyView extends AppCompatActivity {
                                 //need to remove the unit from the composition list and refresh the page
                                 currentArmy.points -= unitCopy.points;
                                 currentArmy.composition.remove(currentArmy.composition.indexOf(unitCopy));
+                                info.setText(currentArmy.name+"   "+currentArmy.points+"/"+currentArmy.maxPoints);
                                 //need to remove from the view
                                 delButton.setVisibility(View.GONE);
                                 tv.setVisibility(View.GONE);
@@ -298,6 +294,7 @@ public class ArmyView extends AppCompatActivity {
                         currentArmy.composition.add(masterList.get(selection));
                         addUnitLine(masterList.get(selection));
                         currentArmy.points += masterList.get(selection).points;
+                        info.setText(currentArmy.name+"   "+currentArmy.points+"/"+currentArmy.maxPoints);
                         //we want to dismiss and then resart activity
                         d.dismiss();
                     }

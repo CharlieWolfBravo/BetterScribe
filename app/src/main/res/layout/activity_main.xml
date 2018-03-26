@@ -6,21 +6,37 @@
     android:layout_height="match_parent"
     tools:context="com.example.josh.betterscribe.MainActivity">
 
-    <ListView
-        android:id="@+id/armies"
+    <RelativeLayout
         android:layout_width="344dp"
         android:layout_height="495dp"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp" />
+        tools:layout_editor_absoluteY="8dp">
 
-    <Button
-        android:id="@+id/addArmyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@android:color/holo_orange_dark"
-        android:text="+"
-        app:layout_constraintBottom_toBottomOf="@+id/armies"
-        app:layout_constraintRight_toRightOf="@+id/armies" />
+        <Button
+            android:id="@+id/add_army_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/holo_orange_dark"
+            android:text="+"
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="256dp"
+            tools:layout_editor_absoluteY="447dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <LinearLayout
+                android:id="@+id/armies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+    </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>

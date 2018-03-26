@@ -3,12 +3,14 @@ package com.example.josh.betterscribe;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,7 +20,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.josh.betterscribe.Army;
 
@@ -32,7 +33,7 @@ import static android.view.View.VISIBLE;
 public class MainActivity extends AppCompatActivity {
 
     //ini
-    ListView armyListView;
+    LinearLayout armyListView;
     ArrayList<Army> armyList = new ArrayList<>();
     //need to populate list, god help my soul
 
@@ -42,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        armyListView  = (ListView) findViewById(R.id.armies);
+        armyListView  = (LinearLayout) findViewById(R.id.armies);
 
-        Button addArmyButton = (Button) findViewById(R.id.addArmyButton);
+        Button addArmyButton = (Button) findViewById(R.id.add_army_button);
         addArmyButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -91,33 +92,82 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //Army neww = new Army("Hello",1000);
-        //armyList.add(neww);
-        ArrayAdapter<Army> adapter = new ArrayAdapter<Army>(this,android.R.layout.simple_list_item_1, armyList);
-
-        armyListView.setAdapter(adapter);
-
+        //need to populate the linear layout with our armies.
+        populateLayout();
         String armies = new String();
         for(Army a: armyList){
             armies += a.name;
         }
-        Toast t = Toast.makeText(MainActivity.this,"Starting oncreate()"+armies,Toast.LENGTH_LONG);
-        t.show();
 
+    }
 
-        armyListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            //what happens when we click an item
-            @Override
-            public void onItemClick(AdapterView<?> parent, android.view.View view, int position, long id){
-                Intent intent = new Intent(MainActivity.this,ArmyView.class);
-                Army passedArmy = armyList.get(position);
-                armyList.remove(position);
-                intent.putExtra("Army",passedArmy);
-                startActivityForResult(intent,123);
+    public void populateLayout(){
+        for(final Army a: armyList){
+            if(a.isDrawn) continue;
+            LinearLayout armyLayout = new LinearLayout(this);
+            armyLayout.setOrientation(LinearLayout.HORIZONTAL);
+            //TO DO
+            //This might cause problems because we might not want to wrap content.
+            LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);//unitlayoutparam
+            LinearLayout.LayoutParams tvp = new LinearLayout.LayoutParams(775, ViewGroup.LayoutParams.WRAP_CONTENT);//textview param
+            LinearLayout.LayoutParams bp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);//button param
+            armyLayout.setLayoutParams(p);
+
+            final TextView tv = new TextView(MainActivity.this);
+            final Button delButton = new Button(MainActivity.this);
+            tv.setText("     "+a.name+"\n     "+a.points+"/"+a.maxPoints+" Points");
+            if(a.points > a.maxPoints){
+                tv.setBackgroundColor(Color.RED);
+                tv.setTextColor(Color.WHITE);
             }
+            tv.setLayoutParams(tvp);
+            tv.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v){
+                    Intent intent = new Intent(MainActivity.this,ArmyView.class);
+                    Army passedArmy = a;
+                    armyList.remove(armyList.indexOf(a)); // dont want duplicates
+                    intent.putExtra("Army",passedArmy);
+                    delButton.setVisibility(android.view.View.GONE);
+                    tv.setVisibility(android.view.View.GONE);
+                    startActivityForResult(intent,123);
+                }
+            });
+            delButton.setText("X");
+            delButton.setBackgroundColor(Color.RED);
+            delButton.setLayoutParams(bp);
+            delButton.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                    builder.setCancelable(true);
+                    builder.setTitle("Confirm Deletion");
+                    builder.setMessage("Are you sure you want to delete this Army?");
+                    builder.setPositiveButton(R.string.confirm,
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    armyList.remove(armyList.indexOf(a));
+                                    delButton.setVisibility(android.view.View.GONE);
+                                    tv.setVisibility(android.view.View.GONE);
+                                }
+                            });
+                    builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //do nothing
+                        }
+                    });
 
-        });
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }
+            });
 
+            armyLayout.addView(tv);
+            armyLayout.addView(delButton);
+            armyLayout.setVisibility(android.view.View.VISIBLE);
+            armyListView.addView(armyLayout);
+            a.isDrawn = true;
+        }
     }
 
     //TO DO
@@ -136,7 +186,6 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("Dev", "Intent was not null...");
                     Army tempArmy = data.getParcelableExtra("Army");
                     armyList.add(tempArmy);
-                    String thing = data.getStringExtra("HAHA");
                     Log.d("Dev", tempArmy.name);
                 } else {
                     Log.d("Dev", "Intent was empty...");
@@ -152,16 +201,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
-        ArrayAdapter<Army> adapter = new ArrayAdapter<Army>(this,android.R.layout.simple_list_item_1, armyList);
-
-        armyListView.setAdapter(adapter);
+        populateLayout();
 
         String armies = new String();
         for(Army a: armyList){
             armies += a.name;
         }
-        Toast t = Toast.makeText(MainActivity.this,armies,Toast.LENGTH_LONG);
-        t.show();
+
+
     }
 
 }

@@ -21,6 +21,15 @@
             android:orientation="vertical"
             android:paddingLeft="20dp">
 
+            <TextView
+                android:id="@+id/infoView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
             <LinearLayout
                 android:id="@+id/hq_vert_layout"
                 android:layout_width="match_parent"
@@ -31,7 +40,7 @@
                     android:id="@+id/hq_linear_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_orange_dark"
+                    android:background="#9e0c9e"
                     android:orientation="horizontal">
 
                     <TextView
@@ -65,7 +74,7 @@
                     android:id="@+id/elite_linear_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_green_dark"
+                    android:background="#118fb2"
                     android:orientation="horizontal">
 
                     <TextView
@@ -91,13 +100,13 @@
                 android:id="@+id/troop_vert_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#d8b020"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/troop_linear_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_red_dark"
                     android:orientation="horizontal">
 
                     <TextView
@@ -123,13 +132,13 @@
                 android:id="@+id/fast_attack_vert_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#ff0019"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/fast_attack_linear_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_blue_bright"
                     android:orientation="horizontal">
 
                     <TextView
@@ -155,13 +164,13 @@
                 android:id="@+id/heavy_support_vert_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#ad2e00"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/heavy_support_linear_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/holo_purple"
                     android:orientation="horizontal">
 
                     <TextView
@@ -219,7 +228,7 @@
                 android:id="@+id/transport_vert_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
+                android:background="#29b200"
                 android:orientation="vertical">
 
                 <LinearLayout

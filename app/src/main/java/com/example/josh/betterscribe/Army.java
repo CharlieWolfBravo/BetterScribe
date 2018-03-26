@@ -19,6 +19,7 @@ public class Army implements Parcelable {
     public int maxPoints;
     public int points;
     public List<Unit> composition = new ArrayList<>();
+    public boolean isDrawn = false;
 
     /////////////////////////////////////////////////////////////////////
     //needed if we want to use parcels

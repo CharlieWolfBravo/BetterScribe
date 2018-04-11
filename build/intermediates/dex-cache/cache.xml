@@ -2,13 +2,166 @@
 <items version="2" >
 
     <item
+        is-multidex="false"
+        jar="C:\Users\Lance\.gradle\caches\modules-2\files-2.1\android.arch.lifecycle\common\1.1.0\edf3f7bfb84a7521d0599efa3b0113a0ee90f85\common-1.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="0edf3f7bfb84a7521d0599efa3b0113a0ee90f85">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\pre-dexed\debug\common-1.1.0_d6c60dd8c4a0cd6bc710a01a323e5c593928f484.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Lance\.gradle\caches\modules-2\files-2.1\com.android.support.constraint\constraint-layout-solver\1.0.2\b9cd8fc6bd15cb915735d34535db30ece0c44603\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_4cbb2de9d44f425f191ff06e4bbe54a07868c1ac.jar" />
+    </item>
+    <item
         is-multidex="true"
-        jar="F:\Term Project\BetterScribe\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="27.0.3"
-        sha1="07e680c69699f2c793ea3d06fe186f53e6ae8591">
-        <dex dex="F:\Term Project\BetterScribe\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_0ddc9abca6b15464b423930daadc6f3acba42b64\classes.dex" />
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_c55f96c7ecad76ae6c503cd97a71b41e69128032\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Lance\.android\build-cache\6608cb91ff3cec89f6fc7e394b6a05f43a053840\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e2bbe48deed35056023eed2cdc0cc92e5c7d3617">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\pre-dexed\debug\classes_dffefb01027e0456ed67e01550d150e138ed8bba.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="0e38d6e5dc8919c9c0319a65168472a80727bc4c">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_727c96177231013e4cc4691679ab615c325140e7\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Lance\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\27.1.1\39ded76b5e1ce1c5b2688e1d25cdc20ecee32007\support-annotations-27.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="39ded76b5e1ce1c5b2688e1d25cdc20ecee32007">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\pre-dexed\debug\support-annotations-27.1.1_2b8a237d07b9fa60eaa1106cd6efd5ce2f95dc0a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Lance\.android\build-cache\368d75679390196c6e3af990ef663643124e1d93\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="ec657bb192b20229696216bf233779b16bf75a54">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\pre-dexed\debug\classes_8c5654cfcedba5ba9a54f5cdc16373567d96dd18.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Lance\.android\build-cache\6f68c0e5a44eec9e39850f0b76a5eb1d5b273618\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="1fd3ceac7f415975323d52c6c6057db409a907f6">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\pre-dexed\debug\classes_01dbbb1591547268f1e7f21bb67caa46434a9e45.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Lance\.android\build-cache\3fbc07d62d0b672f407d076cf20e50fbdf2ba0b8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2feadd535770271ca57b7b431f42151aa4af324a">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\pre-dexed\debug\classes_6020ac5bc242379d34f8f9fbf2f524c79e8785d8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Lance\.android\build-cache\e1da5e2045eaf5afa00a17b90ebf013294c79dbb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c9a721adcd7dbae7a197b0ef81102336539f63ff">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\pre-dexed\debug\classes_f6bfbb80b49686ba1d0abd010f666a3230f236fe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Lance\.android\build-cache\4523566419043e781b5c8a23e1577491ddcd2df0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="71d380aeac037e63bab7bda2ba211777e16a2f42">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\pre-dexed\debug\classes_1a7c15ac90742fe2f9d05daabaac65e291128e5c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Lance\.android\build-cache\72c32824518e8a8905a1c3571d4a9c207a094d03\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="3304d33470ff64cf83bce9189ff3648a42eb2aa7">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\pre-dexed\debug\classes_d31dc767a6ef274d1dbf8d1eb86bf09e0918e2b7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Lance\.android\build-cache\3e053a00945a572e9c49c5c87a22a8c6b8b863f6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="23dcb4803d3103bde3f3f5db978a726338fe49ae">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\pre-dexed\debug\classes_aa61846bff92d7d856c30722dcc37bb1521a1ed3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Lance\.android\build-cache\56629e58e166ce0ecfc052408776e015d15956e2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\pre-dexed\debug\classes_fba4f60a9f6195fcba954a442e846879bb145945.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Lance\.gradle\caches\modules-2\files-2.1\android.arch.core\common\1.1.0\8007981f7d7540d89cd18471b8e5dcd2b4f99167\common-1.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8007981f7d7540d89cd18471b8e5dcd2b4f99167">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\pre-dexed\debug\common-1.1.0_37681e0c5adc5468e85cd9adead9a001f2b15d1f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Lance\.android\build-cache\33015b538c97ca75fee98c19529459258484cf85\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8a9fd7c97f1d13f97f3b52f9d2e54cd857d5acf9">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\pre-dexed\debug\classes_7977b87d924f02f975935f903eefbb2463e6a637.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Lance\.android\build-cache\0bcd4034e65060cd584381ccb62212f8aed18f03\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d968b9bd0011800e0d333d1571b8d34bcb8a0b6e">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\pre-dexed\debug\classes_f414a4183f2f9174f56530466a8555e800467698.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Lance\.android\build-cache\0fc49fc6a5ee8d0237e3dc47485ea354a39d17fc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="874f1143c11f5d38533efe512bf913e3e847e7df">
+        <dex dex="C:\Users\Lance\Desktop\Spring 2018\Cpsc 3770\Term Project\BetterScribe\app\build\intermediates\pre-dexed\debug\classes_4c9f005d2855130704eebf84826029db3aaf3ece.jar" />
     </item>
 
 </items>

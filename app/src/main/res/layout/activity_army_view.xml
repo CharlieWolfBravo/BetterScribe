@@ -100,13 +100,13 @@
                 android:id="@+id/troop_vert_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#d8b020"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/troop_linear_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#d8b020"
                     android:orientation="horizontal">
 
                     <TextView
@@ -132,13 +132,13 @@
                 android:id="@+id/fast_attack_vert_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#ff0019"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/fast_attack_linear_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#ff0019"
                     android:orientation="horizontal">
 
                     <TextView
@@ -164,13 +164,13 @@
                 android:id="@+id/heavy_support_vert_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#ad2e00"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/heavy_support_linear_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#ad2e00"
                     android:orientation="horizontal">
 
                     <TextView
@@ -196,13 +196,13 @@
                 android:id="@+id/flyer_vert_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@android:color/darker_gray"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/flyer_linear_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@android:color/darker_gray"
                     android:orientation="horizontal">
 
                     <TextView
@@ -228,13 +228,13 @@
                 android:id="@+id/transport_vert_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#29b200"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/transport_linear_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#29b200"
                     android:orientation="horizontal">
 
                     <TextView
